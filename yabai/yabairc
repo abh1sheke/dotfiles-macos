@@ -1,0 +1,64 @@
+#!/usr/bin/env sh
+
+# Load yabai script additions
+
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# Globals
+
+## Bsp or float (default: float)
+
+yabai -m config layout bsp
+yabai -m config mouse_follows_focus on
+yabai -m config window_origin_display focused
+yabai -m config window_shadow off
+yabai -m config window_opacity_duration 0.0
+yabai -m config window_animation_duration 0.0
+
+## New window spawns to the right if vertical split, or bottom if horizontal split
+
+yabai -m config window_placement second_child
+yabai -m config window_topmost off 
+
+## Active border config
+
+yabai -m config auto_balance off 
+yabai -m config split_ratio 0.5 
+yabai -m config mouse_modifier fn
+
+## Padding and gaps
+
+yabai -m config top_padding    14
+yabai -m config bottom_padding 14
+yabai -m config left_padding   14
+yabai -m config right_padding  14
+yabai -m config window_gap     14
+
+# Mouse modifier
+yabai -m config mouse_modifier cmd
+
+# Custom spaces for 3 desktops
+yabai -m space 1 --label one 
+yabai -m space 2 --label two 
+yabai -m space 3 --label three 
+yabai -m space 4 --label four 
+yabai -m space 5 --label five 
+yabai -m space 6 --label six 
+yabai -m space 7 --label seven 
+yabai -m space 8 --label eight 
+yabai -m space 9 --label nine 
+yabai -m space 10 --label ten
+
+# Float system preferences. Most of these just diable Yabai form resizing them.
+yabai -m rule --add app="^System Preferences$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^Finder$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^Disk Utility$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^System Information$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^Activity Monitor$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^Spotify$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^Messages$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^App Store$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^balenaEtcher$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^Preview$" sticky=off layer=above manage=off 
+yabai -m rule --add app="^QuickTimePlayer$" sticky=off layer=above manage=off 
