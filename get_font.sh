@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 
 import requests
-import logging
 import sys
-from pathlib import Path
 
 def get_font_files():
   url = sys.argv[1]
