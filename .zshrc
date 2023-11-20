@@ -61,4 +61,4 @@ alias spause="spotify pause"
 alias sst="spotify stop"
 alias ssq="spotify quit"
 
-alial sshare="spotify share url"
+alias sshare="spotify share url"
